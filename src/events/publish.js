@@ -57,6 +57,7 @@ module.exports = function publishFactory (arc, type) {
 function _publishSandbox (type, params, callback) {
   let req = http.request({
     method: 'POST',
+    host: process.env.ARC_HOST || 'localhost',
     port,
     path: '/' + type,
   },
